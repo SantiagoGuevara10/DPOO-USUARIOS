@@ -31,24 +31,33 @@ public class UserManager {
         }
     }
 
-
     public static void registerCompradorPropietario(String username, CompradorPropietario compradorPropietario) {
         compradoresPropietarios.put(username, compradorPropietario);
     }
 
     public static CompradorPropietario getCompradorPropietario(String username) {
-        return compradoresPropietarios.get(username);
+        CompradorPropietario compradorPropietario = compradoresPropietarios.get(username);
+        if (compradorPropietario == null) {
+            System.out.println("Comprador/Propietario no encontrado: " + username);
+        } else {
+            System.out.println("Comprador/Propietario encontrado: " + username);
+        }
+        return compradorPropietario;
     }
 
+    public static Empleado getEmpleado(String username) {
+        Empleado empleado = empleados.get(username);
+        if (empleado == null) {
+            System.out.println("Empleado no encontrado: " + username);
+        } else {
+            System.out.println("Empleado encontrado: " + username + " - Rol: " + empleado.getRole());
+        }
+        return empleado;
+    }
 
     public static void registerEmpleado(String username, Empleado empleado) {
         empleados.put(username, empleado);
     }
-
-    public static Empleado getEmpleado(String username) {
-        return empleados.get(username);
-    }
-
 
     public static void addPieceToCompradorPropietario(String username, Pieza pieza) {
         CompradorPropietario compradorPropietario = getCompradorPropietario(username);
@@ -56,7 +65,6 @@ public class UserManager {
             compradorPropietario.addPieza(pieza);
         }
     }
-
 
     public static boolean isEmpleado(String username) {
         return empleados.containsKey(username);

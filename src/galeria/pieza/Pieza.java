@@ -17,19 +17,18 @@ public class Pieza {
     private String estadoPieza;
     private boolean estaExhibida;
     private boolean disponibleVenta;  
+    private List<String> autores;
+    private double valorFijo;
     private int valorMinimo;
     private int valorInicial;
-    private double valorFijo;
     private Date fechaDeIngreso;
     private boolean esVigente;
     private String descripcion;
     private Propietario propietario;  
-    private List<String> autor;
-
 
     public Pieza(String idPieza, String titulo, int anioCreacion, String lugarCreacion, 
                  String estadoPieza, boolean estaExhibida, boolean disponibleVenta, 
-                 List<String> autor, double valorFijo, int valorMinimo, int valorInicial,
+                 List<String> autores, double valorFijo, int valorMinimo, int valorInicial,
                  Date fechaDeIngreso, boolean esVigente, String descripcion, Propietario propietario) {
         this.idPieza = idPieza;
         this.titulo = titulo;
@@ -38,7 +37,7 @@ public class Pieza {
         this.estadoPieza = estadoPieza;
         this.estaExhibida = estaExhibida;
         this.disponibleVenta = disponibleVenta;
-        this.autor = autor;
+        this.autores = autores;
         this.valorFijo = valorFijo;
         this.valorMinimo = valorMinimo;
         this.valorInicial = valorInicial;
@@ -78,7 +77,7 @@ public class Pieza {
     }
 
     public List<String> getAutor() {
-        return autor;
+        return autores;
     }
 
     public double getValorFijo() {

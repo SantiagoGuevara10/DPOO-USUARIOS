@@ -33,10 +33,12 @@ public class FileUtils {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 3) { 
+                if (parts.length == 3) {
                     String username = parts[0];
-                    String userData = parts[1] + "," + parts[2];
-                    userCredentials.put(username, userData);
+                    String password = parts[1];
+                    String role = parts[2];
+                    userCredentials.put(username, username + "," + password + "," + role);
+                    System.out.println("Loaded: " + username + " with password: " + password + " and role: " + role);
                 }
             }
         }
@@ -46,8 +48,11 @@ public class FileUtils {
     public static boolean verifyUser(String username, String password) {
         if (userCredentials.containsKey(username)) {
             String[] details = userCredentials.get(username).split(",");
-            return details[0].equals(password); 
+            boolean isAuthenticated = details[1].equals(password);
+            System.out.println("Trying to log in with: " + username + " - Authentication: " + isAuthenticated);
+            return isAuthenticated;
         }
+        System.out.println("User not found: " + username);
         return false;
     }
 
