@@ -38,7 +38,7 @@ public class FileUtils {
                     String password = parts[1];
                     String role = parts[2];
                     userCredentials.put(username, username + "," + password + "," + role);
-                    System.out.println("Loaded: " + username + " with password: " + password + " and role: " + role);
+                    System.out.println("Cargando " + username + " con contraseña: " + password + " y rol: " + role);
                 }
             }
         }
@@ -49,10 +49,10 @@ public class FileUtils {
         if (userCredentials.containsKey(username)) {
             String[] details = userCredentials.get(username).split(",");
             boolean isAuthenticated = details[1].equals(password);
-            System.out.println("Trying to log in with: " + username + " - Authentication: " + isAuthenticated);
+            System.out.println("Tratando de loguearse con " + username + " - Autenticacion: " + isAuthenticated);
             return isAuthenticated;
         }
-        System.out.println("User not found: " + username);
+        System.out.println("Usuario no encontrado " + username);
         return false;
     }
 
@@ -73,9 +73,9 @@ public class FileUtils {
             case "administrador":
                 return true; 
             case "cajero":
-                return operation.equals("processPayment");
+                return operation.equals("ProcesandoPago");
             case "operador":
-                return operation.equals("registerBid");
+                return operation.equals("registrandoOferta");
             default:
                 return false;
         }
