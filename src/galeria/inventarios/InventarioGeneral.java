@@ -57,7 +57,7 @@ public class InventarioGeneral {
 	public void addInventarioPasado(String piezaId, Pieza pieza) {
 		this.inventarioPasado.put(piezaId, pieza);
 	}
-	
+		
 	public void addInventarioBodega(String piezaId, Pieza pieza) {
 		this.inventarioBodega.put(piezaId, pieza);
 	}
@@ -66,6 +66,17 @@ public class InventarioGeneral {
 		this.inventarioExhibido.put(piezaId, pieza);
 	}
 	
+	public void removeInventarioPasado(String piezaId) {
+		this.inventarioPasado.remove(piezaId);
+	}
+	
+	public void removeInventarioBodega(String piezaId) {
+		this.inventarioBodega.remove(piezaId);
+	}
+	
+	public void removeInventarioExhibido(String piezaId) {
+		this.inventarioExhibido.remove(piezaId);
+	}
 	
 	
 
