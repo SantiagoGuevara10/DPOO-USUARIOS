@@ -103,10 +103,7 @@ public class CompradorPropietario {
             System.out.println("Operación denegada: El usuario no está verificado.");
             return;
         }
-        if (pieza.getValorFijo() > limiteCompra) {
-            System.out.println("Operación denegada: El precio de la pieza excede el límite de compra.");
-            return;
-        }
+        
         this.piezas.add(pieza);
         System.out.println("Pieza añadida: " + pieza.getTitulo());
     }

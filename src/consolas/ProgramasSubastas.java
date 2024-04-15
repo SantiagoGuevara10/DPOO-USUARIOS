@@ -94,9 +94,14 @@ public class ProgramasSubastas {
 		//Se entrega la pieza al comprador y se le cobra
 		Pieza piezafinal = inventario.getPiezaInventarioExhibido("P003");
 		inventario.removeInventarioExhibido("P003");
-		int pago = 
+		int pago = oferta.getDinero();
+		double dinero = compradorganador.getLimiteCompra();
+		double total = dinero - pago;
+		compradorganador.setLimiteCompra(total);
+		System.out.println(total);
+		compradorganador.addPieza(piezafinal);
 		
-		
+
 		
 		}
 		
