@@ -82,7 +82,12 @@ public class ProgramasSubastas {
 		subasta.mandarOferta("P003");
 		
 		//Se retorna la máxima oferta
+		Oferta oferta = subasta.getMaximaOferta("P003");
 		
+		//Se imprime al comprador con la máxima oferta
+		System.out.println(oferta);
+		Comprador compradorganador = oferta.getComprador();
+		System.out.println(comprador);
 		
 				
 		}
