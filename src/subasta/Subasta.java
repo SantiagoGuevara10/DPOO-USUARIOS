@@ -47,7 +47,7 @@ public class Subasta {
 			return null;
 		}
 		Oferta maxima = ofertas.get(0);
-		for (int i = 1; i > ofertas.size(); i++) {
+		for (int i = 0; i < ofertas.size(); i++) {
 			Oferta oferta = ofertas.get(i);
 			if (oferta.getDinero() > maxima.getDinero()) {
 				maxima = oferta;

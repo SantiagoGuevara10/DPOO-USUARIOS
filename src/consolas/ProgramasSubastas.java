@@ -1,4 +1,4 @@
-package subasta;
+package consolas;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,8 +12,9 @@ import galeria.inventarios.InventarioGeneral;
 import galeria.inventarios.PiezaFotografia;
 import galeria.usuarios.Comprador;
 import galeria.usuarios.Propietario;
+import subasta.Oferta;
+import subasta.Subasta;
 import galeria.pieza.Pieza;
-import galeria.pieza.ProgramasInventarios;
 
 /**
  * Clase que permite probar el hecho de iniciar una subasta, y la oferta y todo lo que puede realizar.
@@ -87,9 +88,16 @@ public class ProgramasSubastas {
 		//Se imprime al comprador con la máxima oferta
 		System.out.println(oferta);
 		Comprador compradorganador = oferta.getComprador();
-		System.out.println(comprador);
+		System.out.println(compradorganador);
+		//Nombre del comprador ganador
+		System.out.println(compradorganador.getNombre());
+		//Se entrega la pieza al comprador y se le cobra
+		Pieza piezafinal = inventario.getPiezaInventarioExhibido("P003");
+		inventario.removeInventarioExhibido("P003");
+		int pago = 
 		
-				
+		
+		
 		}
 		
 		

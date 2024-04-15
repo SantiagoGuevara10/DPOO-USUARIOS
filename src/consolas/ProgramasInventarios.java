@@ -1,4 +1,4 @@
-package galeria.pieza;
+package consolas;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +8,7 @@ import java.util.Map;
 
 import galeria.inventarios.InventarioGeneral;
 import galeria.inventarios.PiezaFotografia;
+import galeria.pieza.Pieza;
 import galeria.usuarios.Propietario;
 
 /**
