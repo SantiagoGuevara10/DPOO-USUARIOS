@@ -22,6 +22,7 @@ public class ProgramasSubastas {
 	
 	
 	public ProgramasSubastas() {
+		Propietario propietario = new Propietario("1234", new ArrayList<>());
 		Pieza pieza = new Pieza( "P002", "Sol de Medianoche", 2020,"España", "Exhibicion",true,false,Arrays.asList("Elena Ochoa"),25000.0,20000,15000,new Date(),true,"Una hermosa obra de arte moderno.",propietario);
 		Propietario propietario2 = new Propietario("2143", new ArrayList<>());
 		PiezaFotografia pieza2 = new PiezaFotografia("P003","La Mona Lisa", 1506, "Louvre",
@@ -70,9 +71,17 @@ public class ProgramasSubastas {
 		Subasta subasta = new Subasta(piezas_Disponibles, compradores_Disponibles);
 		
 		//Se muestran las piezas disponibles
-		
+		System.out.println("Las disponibles son");
 		System.out.println(subasta.getPiezasDisponibles());
 		
+		// Los compradores ofertan por la pieza
+		subasta.crearOferta(comprador2, "P003", 550000);
+		subasta.crearOferta(comprador, "P003", 600000);
+
+		//Se manda la oferta al administrador
+		subasta.mandarOferta("P003");
+		
+		//Se reg
 		
 				
 		}
@@ -90,7 +99,7 @@ public class ProgramasSubastas {
 	}
 	
 	public static void main(String[] args) {
-		
+		new ProgramasSubastas();
 	}
 
 }
