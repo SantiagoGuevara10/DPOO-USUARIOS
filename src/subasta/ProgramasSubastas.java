@@ -81,7 +81,8 @@ public class ProgramasSubastas {
 		//Se manda la oferta al administrador
 		subasta.mandarOferta("P003");
 		
-		//Se reg
+		//Se retorna la máxima oferta
+		
 		
 				
 		}
